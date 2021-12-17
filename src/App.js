@@ -14,7 +14,10 @@ const App = () => {
         <div className="links">
           <Link to="/">Home</Link>
           <Link to="/help">Help</Link>
-          <Link to="/order-pizza">Pizza</Link>
+          <Link id="order-pizza" to="/pizza">
+            {" "}
+            Pizza
+          </Link>
         </div>
       </nav>
       <Switch>
