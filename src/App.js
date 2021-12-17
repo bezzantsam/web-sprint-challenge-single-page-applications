@@ -17,6 +17,23 @@ const App = () => {
           <Link to="/order-pizza">Pizza</Link>
         </div>
       </nav>
+      <Switch>
+        <Route path="/pizza/confirm">
+          <Confirm />
+        </Route>
+
+        <Route path="/help">
+          <Help />
+        </Route>
+
+        <Route path="/pizza">
+          <Shop />
+        </Route>
+
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
 };
