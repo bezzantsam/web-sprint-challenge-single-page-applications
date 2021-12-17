@@ -70,7 +70,7 @@ const submit = (event) => {
     .post("https://regres.in/api/orders", Data)
     .then((response) => {
       setPost(response.data);
-      console.log(response.data);
+      //   console.log(response.data);
       setData({
         size: "",
         sauce: "",
@@ -194,21 +194,47 @@ return (
       {/*txt*/}
       <label htmlFor="name-input"> Your name </label>
       {/*error */}
-      {errors["name-input"].length > 0 ? 
-        <p className={"error"}>{errors["name-input"]}</p> : null}
-      
-      <input onChange={inputChange} type = "text" name = "name-input" id = "name-input" placeholder="john" value={Data["name-input"]} data-cy="name-input"/>
-
+      {errors["name-input"].length > 0 ? (
+        <p className={"error"}>{errors["name-input"]}</p>
+      ) : null}
+      <input
+        onChange={inputChange}
+        type="text"
+        name="name-input"
+        id="name-input"
+        placeholder="john"
+        value={Data["name-input"]}
+        data-cy="name-input"
+      />
       <label htmlFor="special-text"> Special Instructions</label>
-
-      <textarea data-cy="instructions" onChange={inputChange} type="text" name="instructions" id="special-text" placeholder="I want this pizza to have ..." value={Data.instructions}/>
-
+      <textarea
+        data-cy="instructions"
+        onChange={inputChange}
+        type="text"
+        name="instructions"
+        id="special-text"
+        placeholder="I want this pizza to have ..."
+        value={Data.instructions}
+      />
       {/*Button set up for disable*/}
       <label htmlFor="order-button"> Ready to Order:</label>
-
-      <pre className={'error'}>{JSON.stringify(postError, null, 2}</pre>
-        <button href="/pizza/confirm" type="submit" onSubmit={submit} disabled={disabled} id="order-button" data-cy="submit" >
-
+      <pre className={"error"}>{JSON.stringify(postError, null, 2)}</pre>
+      <button
+        href="/pizza/confirm"
+        type="submit"
+        onSubmit={submit}
+        disabled={disabled}
+        id="order-button"
+        data-cy="submit"
+      >
+        {post === true ? (
+          <Link disabled={disabled} className="btn" to="/pizza/confirm">
+            Submit Order
+          </Link>
+        ) : (
+          "Submit Order"
+        )}
+      </button>
     </form>
   </div>
 );
