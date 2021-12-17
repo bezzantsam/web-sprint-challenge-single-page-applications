@@ -97,6 +97,7 @@ const Shop = () => {
           {" "}
           Choose the size, prepare to party
         </label>
+        <br />
         <select
           id="size-dropdown"
           name="size"
@@ -108,8 +109,11 @@ const Shop = () => {
             <p className={"error"}>{errors.size}</p>
           ) : null}
           <option> --Please choose an option--</option>
+          <br />
           <option value="Large"> Large </option>
+          <br />
           <option value="Medium"> Medium </option>
+          <br />
           <option value="Small"> Small </option>
         </select>
         {/*sauce  checked*/}
@@ -117,6 +121,7 @@ const Shop = () => {
           {" "}
           Choose your sauce
         </label>
+        <br />
         Italian Tomato
         <input
           onChange={inputChange}
@@ -150,8 +155,10 @@ const Shop = () => {
           name="sauce"
           value="Garlic Alfredo"
         />
+        <br />
         {/*  Toppings  */}
         <label htmlFor="topping"> Add your toppings </label>
+        <br />
         Mushrooms
         <input
           onChange={inputChange}
@@ -222,7 +229,7 @@ const Shop = () => {
         <pre className={"error"}>{JSON.stringify(postError, null, 2)}</pre>
         <button
           href="/pizza/confirm"
-          type="submit"
+          type="Submit"
           onSubmit={submit}
           disabled={disabled}
           id="order-button"

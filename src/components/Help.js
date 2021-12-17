@@ -6,7 +6,7 @@ const Help = () => {
       <h1> How can we help you?</h1>
       <form>
         <textarea />
-        <button> submit</button>
+        <button id="sub"> submit</button>
       </form>
     </div>
   );
